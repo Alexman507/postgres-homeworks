@@ -2,10 +2,12 @@
 create database north;
 
 create table customers (
-customer_id varchar(5) primary key,
+customer_id varchar(5) unique,
 company_name varchar(100) not null,
 contact_name varchar(100) not null
 );
+
+-- drop table customers;
 
 create table employees (
 employee_id int primary key,
@@ -19,7 +21,7 @@ notes text
 create table orders (
 order_id int primary key,
 customer_id varchar(5) references customers (customer_id),
-employee_id int references customers (employee_id),
+employee_id int references employees (employee_id),
 order_date date not null,
 ship_city varchar(100) not null
 )
