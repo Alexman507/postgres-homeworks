@@ -2,13 +2,13 @@
 create database north;
 
 create table customers (
-customer_id varchar(5) not null,
+customer_id varchar(5) primary key,
 company_name varchar(100) not null,
-contact_name varchar(100) not null,
+contact_name varchar(100) not null
 );
 
 create table employees (
-employee_id int primary key auto_increment,
+employee_id int primary key,
 first_name varchar(100) not null,
 last_name varchar(100) not null,
 title varchar(100) not null,
@@ -17,11 +17,11 @@ notes text
 );
 
 create table orders (
-order_id int primary key auto_increment,
+order_id int primary key,
 customer_id varchar(5) references customers (customer_id),
 employee_id int references customers (employee_id),
 order_date date not null,
-ship_city varchar(100) not null,
+ship_city varchar(100) not null
 )
 
 --alternative method for copy data from files.csv
