@@ -6,7 +6,7 @@ SELECT contact_name, city FROM customers
 select order_id, shipped_date - order_date as time_delivery from orders
 
 -- 3. все города без повторов, в которых зарегистрированы заказчики (customers)
-
+select
 -- 4. количество заказов (таблица orders)
 
 
