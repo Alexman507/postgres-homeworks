@@ -6,8 +6,9 @@ SELECT contact_name, city FROM customers
 select order_id, shipped_date - order_date as time_delivery from orders
 
 -- 3. все города без повторов, в которых зарегистрированы заказчики (customers)
-select
+select distinct city from customers
 -- 4. количество заказов (таблица orders)
-
+select count (*) from orders
 
 -- 5. количество стран, в которые отгружался товар (таблица orders, колонка ship_country)
+select count (distinct ship_country) from orders
