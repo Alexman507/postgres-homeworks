@@ -12,7 +12,12 @@ where customers.city = 'London' and employees.city = 'London' and shippers.compa
 -- имя поставщика и его телефон (contact_name и phone в табл suppliers) для таких продуктов,
 -- которые не сняты с продажи (поле discontinued) и которых меньше 25 и которые в категориях Dairy Products и Condiments.
 -- Отсортировать результат по возрастанию количества оставшегося товара.
-
+select product_name, units_in_stock, contact_name, phone
+from products
+join suppliers using (supplier_id)
+join categories using (category_id)
+where discontinued = 0 and units_in_stock < 25 and category_name in ('Dairy Products', 'Condiments')
+order by units_in_stock
 
 -- 3. Список компаний заказчиков (company_name из табл customers), не сделавших ни одного заказа
 
