@@ -1,5 +1,11 @@
 -- 1. Создать таблицу student с полями student_id serial, first_name varchar, last_name varchar, birthday date, phone varchar
-
+CREATE TABLE student (
+	student_id serial,
+	first_name varchar,
+	last_name varchar,
+	birthday date,
+	phone varchar
+);
 
 -- 2. Добавить в таблицу student колонку middle_name varchar
 
@@ -17,3 +23,18 @@
 
 
 -- 7. Удалить все данные из таблицы со сбросом идентификатор в исходное состояние
+create table student (
+	student_id serial,
+	first_name varchar,
+	last_name varchar,
+	birthday date,
+	phone varchar
+);
+
+ALTER TABLE student ADD COLUMN middle_name varchar;
+
+ALTER TABLE student DROP COLUMN middle_name;
+
+ALTER TABLE student RENAME COLUMN birthday TO birth_date;
+
+ALTER TABLE student ALTER COLUMN phone SET DATA TYPE varchar(32);
